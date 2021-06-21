@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Home</title>
+    {% endblock title %}
+
+{% block body_block %}
+<body style="background-image: url('{% static 'images/house1.jpg' %}');background-size: 100% 100%;
+background-repeat: no-repeat;background-attachment: fixed;">
+
+
+<form method="post">
+{% csrf_token %}
+<br><br><br>
+<div style="display:inline-flex;"> 
+ <div class="col-sm-4" style="margin-left:100px">
+  <div style="margin-left:140px;margin-right:-140px;"> 
+   <label style="color:white;">Location</label>
+  </div>
+ <select style="text-align: center;text-align-last: center;
+  text-indent: 5px; "  class="form-control" id="location" name="location" required>
+    <option style="justify-content:center;text-align: center;" value="" selected>--Select--</option>
+    {% for loc  in locations %}
+        <option value="{{loc}}">{{loc}}</option>
+  {% endfor %}
+</select>
+  </div>
+<hr>
+    <div style="margin-left:400px;">
+     <div style="margin-left:140px;margin-right:-140px">
+<label style="color:white;">Square Feet</label>
+     </div>
+<div class="row">
+    <div class="col-sm-4" >
+      <input  type="number" style="text-align: center;text-align-last: center;
+  text-indent: 5px; width:350px;" class="form-control" placeholder="eg.1000"  min=250 id="sqft" name="sqft" required>
+    </div>
+</div>
+    </div>
+    
+     </div>
+    </div>
+<br><br><br><br>
+
+<div style="display:inline-flex;">
+    <div class="col-sm-4" style="margin-left:100px">
+        <div style="margin-left:164px;margin-right:-164px">
+    <label style="color:white;" >BHK</label>
+        </div>
+<select style="justify-content:center;text-align: center;text-align-last: center;
+  text-indent: 5px; width:360px; " class="form-control" id="bhk" name="bhk" required>
+        <option value="" selected>--Select--</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+</select>
+</div>
+
+
+
+<div style="padding-left:367px;">
+    <div style="margin-left:140px;margin-right:-140px">
+<label style="color:white;">Bathroom</label>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4" >
+<select style="text-align: center;text-align-last: center;
+  text-indent: 5px; width:350px" id="bath" class="form-control" name="bath" placeholder="e.g 2">
+    <option value="" selected>--Select--</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+</select>
+    </div>
+        </div>
+    </div>
+        </div>
+<br><br><br><br>
+    <div style="display: flex;justify-content: center;align-items: center;">
+<button  type="submit" class="btn btn-success">Check Price</button>
+    </div>
+</form>
+
+
+</body>
+{% endblock  %}

@@ -1,0 +1,13 @@
+div > p{
+    font-family: "Sofia", sans-serif;
+    font : "Sofia";
+}
+
+td{
+    color: white;
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 120px;
+}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Latest Predictions</title>
+{% endblock  %}
+
+{% block body_block %}
+
+    <h3 style="padding-left:20px;margin-top:50px;font-family:cursive">Recent House Price Predictions</h3>
+
+<table style="margin-top:50px;" class="table table-bordered text-center table-striped table-light" id="tble">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col" >Prediction No.</th>
+      <th scope="col" >Location</th>
+      <th scope="col" >Square Feet</th>
+      <th scope="col" >BHK</th>
+      <th scope="col" >Bathroom</th>
+      <th scope="col" >Predicted Price in Lacs(₹)</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+
+
+  {% for p in predictions %}
+    <tr>
+      
+      <td>{{p.id}}</td>
+      <td>{{p.locations}}</td>
+      <td>{{p.sqft}}</td>
+      <td>{{p.bhk}}</td>
+      <td>{{p.bath}}</td>
+      <td>{{p.predicted_price}}</td>
+      
+    </tr>
+    {% endfor %}
+    
+  </tbody>
+</table>
+
+</body>
+
+{% endblock  %}

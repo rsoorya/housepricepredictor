@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Prediction</title>
+{% endblock  %}
+
+{% block body_block %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+
+<h3 style="text-align: center;margin-top:75px;font-family:cursive;">House Price Prediction </h3>
+
+<br>
+
+<div class="card mb-3" style="max-width: 1040px;margin-left: 50px;margin-right: auto;margin-top:30px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{% static 'images/house1.jpg' %}" width="280" height="200">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <!--<h5 class="card-title">Card title</h5>-->
+        <h5><p class="card-text" style="font-family: Sofia, sans-serif;font : Sofia;">Location : {{location}}</p></h5>
+        <h5><p class="card-text" style="font-family: Sofia, sans-serif;font : Sofia;">Square Feet : {{sqft}}</p></h5>
+        <h5><p class="card-text" style="font-family: Sofia, sans-serif;font : Sofia;">BHK : {{bhk}}</p></h5>
+        <h5><p class="card-text" style="font-family: Sofia, sans-serif;font : Sofia;">Bathroom : {{bath}}</p></h5>
+        <h5><p class="card-text" style="font-family: Sofia, sans-serif;font : Sofia;">Predicted Price : <span style="font-family: cursive"><b>{{price}} Lacs</b></span></h5>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<br>
+{% endblock  %}
