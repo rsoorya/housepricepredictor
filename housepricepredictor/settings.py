@@ -1,4 +1,6 @@
+import django_heroku
 import os
+
 import environ
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -97,3 +99,4 @@ SSTATIC_ROOT= os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[(os.path.join(BASE_DIR ,'static'))]
 
+django_heroku.settings(locals())
